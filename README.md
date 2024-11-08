@@ -27,6 +27,26 @@ The program takes input values for RSA key generation, encryption, and decryptio
    ```bash
    python3 RSA.py
 
+## Input Instructions
+
+Enter the following values when prompted:
+
+- **pe**
+- **pc**
+- **qe**
+- **qc**
+- **ee**
+- **ec**
+- **Cyphertext**
+- **Plaintext**
+
+## Output
+
+The program will display:
+
+- **Decrypted Plaintext**: The decrypted original message from the given encrypted input.
+- **Encrypted Ciphertext**: The ciphertext generated from the given plaintext input.
+  
 ## Important Notes
 
 1. Ensure **\( p \) and \( q \)** are **prime numbers** for secure RSA encryption. You may need to adjust \( pe \), \( pc \), \( qe \), and \( qc \) to get valid primes.
