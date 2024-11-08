@@ -1,3 +1,4 @@
+import sys
 from math import gcd
 
 # Extended Euclidean Algorithm to find modular inverse
@@ -30,15 +31,15 @@ def decrypt(ciphertext, d, n):
 
 # Main function to handle CLI input and perform encryption/decryption
 if __name__ == "__main__":
-    # Collect inputs from the user
-    pe = int(input("Enter the value for pe: "))
-    pc = int(input("Enter the value for pc: "))
-    qe = int(input("Enter the value for qe: "))
-    qc = int(input("Enter the value for qc: "))
-    ee = int(input("Enter the value for ee: "))
-    ec = int(input("Enter the value for ec: "))
-    encrypted_message = int(input("Enter the encrypted message (as an integer): "))
-    plaintext_message = int(input("Enter the plaintext message to encrypt (as an integer): "))
+    # Collect inputs from the command line
+    pe = int(sys.argv[1])
+    pc = int(sys.argv[2])
+    qe = int(sys.argv[3])
+    qc = int(sys.argv[4])
+    ee = int(sys.argv[5])
+    ec = int(sys.argv[6])
+    encrypted_message = int(sys.argv[7])
+    plaintext_message = int(sys.argv[8])
 
     # Compute p, q, and e values
     p = (2 ** pe) - pc
@@ -53,5 +54,5 @@ if __name__ == "__main__":
     encrypted_result = encrypt(plaintext_message, e, n)
     decrypted_result = decrypt(encrypted_message, d, n)
 
-    print(f"Decrypted Plaintext: {decrypted_result}")
-    print(f"Encrypted Ciphertext: {encrypted_result}")
+    # Output the result in the required format
+    print(f"{decrypted_result},{encrypted_result}")
